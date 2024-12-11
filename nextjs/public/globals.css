@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F0F0F;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form{
+  background: linear-gradient(90deg, #025900, #0f0f0f);
+  
+}
+.to-bottom{
+  background: linear-gradient(to bottom, #025900, #0f0f0f);
+  
+}
+.circle{
+  background: radial-gradient(circle, #30383b, #000000);
+  box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.3);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+#thumbnail{
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#lyrics{
+  background-color: rgba(0, 0, 0, 0.595);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.action {
+  transition: transform 0.3s ease;
+}
+
+.action.rotate {
+  transform: rotate(180deg);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#ffffff 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#575757);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
+}

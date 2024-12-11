@@ -1,0 +1,30 @@
+# Ignore Python bytecode
+__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore logs
+*.log
+
+# Ignore environment variable files
+.env
+
+# Ignore configuration files
+config.py
+instance/
+
+# Ignore other files and directories
+.DS_Store
+.git
+.gitignore
+npm-debug.log
+yarn-error.log
+*.sqlite3
+
+ffmpeg/

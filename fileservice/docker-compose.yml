@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fileservices
+    ports:
+      - "5000:5000"
+    volumes:
+      - C:\Users\MisbahulRafi\Music:/home/app/data/downloads
+    environment:
+      - PYTHONUNBUFFERED=1

@@ -1,0 +1,31 @@
+# Ignore the .env file
+.env
+
+# Ignore node_modules
+node_modules
+
+# Ignore vendor
+vendor
+
+# Ignore logs
+storage/logs
+
+# Ignore cache
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+
+# Ignore compiled files
+public/hot
+public/storage
+
+# Ignore other files and directories
+.DS_Store
+.git
+.gitignore
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+phpunit.xml
+phpunit.xml.dist

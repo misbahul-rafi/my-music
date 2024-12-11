@@ -1,0 +1,37 @@
+services:
+  mymusic-db:
+    image: mysql:latest
+    container_name: mymusic-db
+    environment:
+      MYSQL_ROOT_PASSWORD: myname
+    restart: always
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mymusic_net
+
+  fileservice:
+    image: fileservice:latest
+    container_name: fileservice
+    volumes:
+      - C:\Users\MisbahulRafi\Music:/home/app/data/downloads
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+        - mymusic_net
+
+  my-music:
+    image: mymusic:latest
+    container_name: my-music
+    ports:
+      - "3000:3000"
+    networks:
+        - mymusic_net
+    depends_on:
+      - fileservice
+      - mymusic-db
+    env_file:
+      - .env.nextjs
+        
+networks:
+  mymusic_net:
