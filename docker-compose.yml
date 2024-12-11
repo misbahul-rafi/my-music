@@ -19,6 +19,8 @@ services:
       - PYTHONUNBUFFERED=1
     networks:
         - mymusic_net
+    ports:
+      - "5000:5000"    
 
   my-music:
     image: mymusic:latest

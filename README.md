@@ -40,15 +40,25 @@ cd my-music
 ```
 2. Set Up Docker
 Pastikan Anda memiliki Docker dan Docker Compose yang terinstal di sistem Anda.
-
-4. Konfigurasi File Environment
-Buat file .env untuk masing-masing layanan berdasarkan
-- env-example.nextjs untuk Next.js
-- .env.example di folder laravel
-3. Menjalankan Aplikasi
+3. Build Image Docker
+Pilih salah satu dari command dibawah
+```plaintext
+docker build -t fileservice:latest ./fileservice/.
+docker build -t mymusic:latest ./nextjs/.
+```
+atau
+```plaintext
+docker build -t fileservice:latest ./fileservice/.
+docker build -t laravel:latest ./laravel/.
+```
+4. Rename env
+```plaintext
+env.example.nextjs => .env.nextjs
+env.example.laravel => .env.laravel
+```
+5. Jalankan aplikasi
 ```plaintext
 docker-compose up --build
-
 ```
 ---
 ## 🛠️ Penggunaan
